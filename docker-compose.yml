@@ -1,0 +1,14 @@
+services:
+  images.laravelcompany.com:
+    build:
+      context: .
+    container_name: images.laravelcompany.com
+    image: izdrail/images.laravelcompany.com:latest
+    restart: always
+    environment:
+      - CLOUDFLARE_API_TOKEN=
+      - CLOUDFLARE_ACCOUNT_ID=
+    ports:
+      - "1054:1054"   # Backend service port
+    volumes:
+      - .:/home/trending/
